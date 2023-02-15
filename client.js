@@ -1,11 +1,8 @@
-const net = require("net");
-const { host, port } = require("./client");
-
 // establishes a connection with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: "165.227.47.243",
-    port: 50541,
+    host: "",
+    port: 0,
   });
   //when we connect, do this
   conn.on("connect", () => {
@@ -24,6 +21,11 @@ const connect = function () {
 
   return conn;
 };
-//should this all be inside the connect function??
-console.log("Connecting ...");
-connect();
+
+const host = "165.227.47.243";
+const port = 50541;
+
+module.exports = {
+  host,
+  port,
+};
