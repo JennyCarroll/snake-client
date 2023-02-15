@@ -1,13 +1,19 @@
+const net = require("net");
+
 // establishes a connection with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: "",
-    port: 0,
+    host: "165.227.47.243",
+    port: 50541,
   });
-  //when we connect, do this
+  //on connection I notify myself that I am connected
   conn.on("connect", () => {
-    console.log("connected to server");
-    // code that does something when the connection is first established
+    console.log("Successfully connected to game server");
+  });
+
+  //on connection I tell the server my name
+  conn.on("connect", () => {
+    conn.write("Name: JGC");
   });
 
   // Update the connect function to handle incoming data and console.log it for the player.
@@ -21,11 +27,7 @@ const connect = function () {
 
   return conn;
 };
-
-const host = "165.227.47.243";
-const port = 50541;
-
+//I export my connect function to module.exports so that other files can require and use it.
 module.exports = {
-  host,
-  port,
+  connect,
 };
