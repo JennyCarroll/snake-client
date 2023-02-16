@@ -13,14 +13,14 @@ const connect = function () {
   });
 
   //on connection I tell the server my name
-  conn.on("connect", () => {
-    // setInterval(() => {
-    //   conn.write("Move: up");
-    // }, 50);
-    // setTimeout(() => {
-    //   conn.write("Move: up");
-    // }, 100);
-  });
+  // conn.on("connect", () => {
+  // setInterval(() => {
+  //   conn.write("Move: up");
+  // }, 50);
+  // setTimeout(() => {
+  //   conn.write("Move: up");
+  // }, 100);
+  // });
 
   // "Move: up" - move up one square (unless facing down)
   // "Move: down" - move down one square (unless facing up)

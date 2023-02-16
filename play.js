@@ -6,5 +6,5 @@ const { setupInput } = require("./input");
 //I console.log Connecting...
 console.log("Connecting ...");
 //I call the connect function using my connect keyword, which allows me to call the function housed in client.js
-connect();
-setupInput();
+
+setupInput(connect());
